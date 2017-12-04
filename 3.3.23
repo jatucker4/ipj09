@@ -1,0 +1,44 @@
+public class PseudoRandom {
+    private long ran;
+
+    public PseudoRandom (int seed)
+    {
+        this.ran = ran*System.currentTimeMillis();
+    }
+
+    long randomLong()
+    {
+        long a = ran;
+        long b = (150385748*935);
+        long c = (9584729204*843);
+        long newRan = b * a + c;
+        return newRan;
+    }
+
+    double randomDouble()
+    {
+        double nextRan = this.randomLong();
+        return nextRan;
+    }
+
+    int randomInt()
+    {
+        int nextRan = (int)this.randomLong();
+        return nextRan;
+    }
+
+    byte randomByte()
+    {
+        byte nextRan = (byte)this.randomLong();
+        return nextRan;
+    }
+
+    public static void main(String[] args)
+    {
+        PseudoRandom rand = new PseudoRandom(10);
+        System.out.println(rando.randomLong());
+        System.out.println(rando.randomByte());
+        System.out.println(rando.randomInt());
+        System.out.println(rando.randomDouble());
+    }
+}
